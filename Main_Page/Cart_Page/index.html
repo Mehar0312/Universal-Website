@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Cart Page</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+
+  <!-- CSS Links -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+  <!-- JavaScript Source -->
+  <script src="index.js" charset="utf-8" defer></script>
+
+  <!-- Bootstrap Javascript -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <!-- Fixed Navigation Section -->
+  <section id="fixed">
+    <nav class="navi-fixed navbar navbar-expand-lg navbar-light navbar-fixed-top">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-1" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          <i class="fas fa-book fa-2x"></i>
+        </a>
+
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success btn-outline-dark my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-1">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa fa-book"></i> Books</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fas fa-cloud"></i> About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fas fa-phone"></i> Contact</a>
+            </li>
+            <!-- <li class="nav-item">
+                <div class="dropdown">
+                  <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown button
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </div>
+              </li> -->
+          </ul>
+        </div>
+        <a class="nav-link" href="#signup" data-toggle="modal" data-target=".log-sign"><i class="fas fa-user-circle fa-2x user-icon"></i> </a>
+        <a href="#"><i class="fas fa-shopping-cart fa-2x cart-icon"></i></a>
+      </div>
+    </nav>
+  </section>
+
+  <!-- Disclaimer Section -->
+  <section>
+    <div class="disclaimer alert alert-success" role="alert">
+      Free Shipping!
+    </div>
+  </section>
+
+  <!-- Cart Items Section -->
+  <section>
+    <div class="">
+      Your Cart
+    </div>
+    <div class="items-container container">
+      <div class="row">
+        <div class="col-2">
+          <a href=""><img class="book" src="https://images-eu.ssl-images-amazon.com/images/I/41gVhoPaE5L._AC_SX184_.jpg" alt=""></a>
+        </div>
+        <div class="col-8">
+          <h1>Think Like a Monk</h1>
+          <h5>Jay Shetty</h5>
+          <h5>Jamtara Publications</h5>
+        </div>
+        <div class="col-2">
+          <div class="container">
+            <p class="price">$99.90</p>
+            <button class="wishlist-btn btn btn-outline-info" type="button" name="button">Wishlist</button>
+            <br>
+            <br>
+            <button class="btn btn-info" type="button" name="button">Remove</button>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-2">
+          <a href="#"><img class="book" src="https://images-eu.ssl-images-amazon.com/images/I/512+dA1m+EL._AC_SX368_.jpg" alt=""></a>
+        </div>
+        <div class="col-8">
+          <h1>Hidden in the Plain Sight</h1>
+          <h5>Jeffrey Archer</h5>
+          <h5>William Warwicks Publications</h5>
+        </div>
+        <div class="col-2">
+          <div class="container">
+            <p class="price">$49.90</p>
+            <button class="wishlist-btn btn btn-outline-info" type="button" name="button">Wishlist</button>
+            <br>
+            <br>
+            <button class="btn btn-info" type="button" name="button">Remove</button>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-9">
+
+        </div>
+        <div class="col-3">
+          <!-- <h6>Total - $...</h6>
+          <h6>Free Shipping - $0.00</h6>
+          <h6>Tax - $...</h6> -->
+
+          <table>
+            <tr>
+              <td style="text-align: right;">Total - </td>
+              <td>$...</td>
+            </tr>
+            <tr>
+              <td style="text-align: right;">Free Shipping - </td>
+              <td>$0.00</td>
+            </tr>
+            <tr>
+              <td style="text-align: right;">Tax - </td>
+              <td>$...</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer id="footer">
+    <div id="left-footer">
+      <h3>Quick Links</h3>
+      <p>
+      <ul>
+        <li>
+          <a href="index.html">Home
+          </a>
+        </li>
+        <li>
+          <a href="languages.html">Books</a>
+        </li>
+        <li>
+          <a href="projects.html">Contact</a>
+        </li>
+        <li>
+          <a href="about.html">About us</a>
+        </li>
+        <li>
+          <a href="feedback.html">Feedback</a>
+        </li>
+        <li>
+          <a href="logout.php">LOGOUT</a>
+        </li>
+      </ul>
+      </p>
+    </div>
+
+    <div id="right-footer">
+      <h3>Follow us on</h3>
+      <div id="social-media-footer">
+        <ul>
+          <li>
+            <a target="_blank" href="#">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="#">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="#">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <p>###.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
