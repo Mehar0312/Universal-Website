@@ -49,6 +49,14 @@ body {
 .dropdown-link:hover .dropdown-content {  /* Show the dropdown menu on hover */
   display: block;
 }
+.cart-count {
+  bottom: 20px;
+  left: 5px;
+  color: #333;
+}
+.anchor-no {
+  font-size: 15px;
+}
 
 /* Filter Section */
 .filter {

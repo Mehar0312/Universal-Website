@@ -1,58 +1,25 @@
-// When the user scrolls down 20px from the top of the document, slide down the navbar
-// When the user scrolls to the top of the page, slide up the navbar (50px out of the top view
-window.onscroll = function() {scrollFunction()};
+const bookDetails = document.getElementById('book-details');
+const title = bookDetails.querySelector('.title').textContent;
+const author = bookDetails.querySelector('.author').textContent;
+const publications = bookDetails.querySelector('.publications').textContent;
+const price = bookDetails.querySelector('.price').textContent;
+const image = bookDetails.querySelector('.book').getAttribute('src');
 
-function scrollFunction() {
-  if (document.body.scrollTop > 175 || document.documentElement.scrollTop > 175) {
-    document.getElementById("fixed").style.top = "0";
-  } else {
-    document.getElementById("fixed").style.top = "-70px";
-  }
+const addtoCartBtn = bookDetails.querySelector('.add-to-cart-btn');
+
+myBooksList.details = [];
+
+function addToCart(title, author, publications, price, image) {
+  const sendDetails = {
+    title: title,
+    author: author,
+    publications: publications,
+    price: price,
+    image: image
+  };
+  myBooksList.details.push(sendDetails);
+  console.log(myBooksList.details);
+  console.log(myBooksList);
 }
-$('#recipeCarousel').carousel({
-  interval: 10000
-})
 
-$('.carousel .carousel-item').each(function(){
-    var minPerSlide = 3;
-    var next = $(this).next();
-    if (!next.length) {
-    next = $(this).siblings(':first');
-    }
-    next.children(':first-child').clone().appendTo($(this));
-
-    for (var i=0;i<minPerSlide;i++) {
-        next=next.next();
-        if (!next.length) {
-        	next = $(this).siblings(':first');
-      	}
-
-        next.children(':first-child').clone().appendTo($(this));
-      }
-});
-
-//sign up
-$(window, document, undefined).ready(function() {
-
-  $('.input').blur(function() {
-    var $this = $(this);
-    if ($this.val())
-      $this.addClass('used');
-    else
-      $this.removeClass('used');
-  });
-  
-  });
-
-
-$('#tab1').on('click' , function(){
-    $('#tab1').addClass('login-shadow');
-   $('#tab2').removeClass('signup-shadow');
-});
-
-$('#tab2').on('click' , function(){
-    $('#tab2').addClass('signup-shadow');
-   $('#tab1').removeClass('login-shadow');
-
-
-});
+addtoCartBtn.addEventListener('click', addToCart.bind(null, title, author, publications, price, image));

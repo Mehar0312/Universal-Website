@@ -16,6 +16,7 @@
   <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
   <!-- JavaScript Source -->
+  <!-- <script src="../main.js" charset="utf-8" defer></script> -->
   <script src="index.js" charset="utf-8" defer></script>
 
   <!-- Bootstrap Javascript -->
@@ -44,8 +45,15 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent-1">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa fa-book"></i> Books</a>
+            <li class="nav-item dropdown-link">
+              <button class="droplink" type="button" name="button">
+                <a class="nav-link" href="#"><i class="fa fa-book"></i> Books</a>
+              </button>
+              <div class="dropdown-content">
+                <a class="book-links" href="#"><i class="fas fa-angle-right"></i> CBSE</a>
+                <a class="book-links" href="#"><i class="fas fa-angle-right"></i> JEE</a>
+                <a class="book-links" href="#"><i class="fas fa-angle-right"></i> NEET</a>
+              </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#"><i class="fas fa-cloud"></i> About Us</a>
@@ -53,22 +61,10 @@
             <li class="nav-item">
               <a class="nav-link" href="#"><i class="fas fa-phone"></i> Contact</a>
             </li>
-            <!-- <li class="nav-item">
-                <div class="dropdown">
-                  <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown button
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
-                </div>
-              </li> -->
           </ul>
         </div>
         <a class="nav-link" href="#signup" data-toggle="modal" data-target=".log-sign"><i class="fas fa-user-circle fa-2x user-icon"></i> </a>
-        <a href="#"><i class="fas fa-shopping-cart fa-2x cart-icon"></i></a>
+        <!-- <a href="#"><i class="fas fa-shopping-cart fa-2x cart-icon"></i></a> -->
       </div>
     </nav>
   </section>
@@ -82,11 +78,11 @@
 
   <!-- Cart Items Section -->
   <section>
-    <div class="">
+    <div class="" style="text-align: center; font-size: 30px; padding: 2% 0;">
       Your Cart
     </div>
-    <div class="items-container container">
-      <div class="row">
+    <div id="books-list" class="items-container container">
+      <div class="row delete">
         <div class="col-2">
           <a href=""><img class="book" src="https://images-eu.ssl-images-amazon.com/images/I/41gVhoPaE5L._AC_SX184_.jpg" alt=""></a>
         </div>
@@ -97,16 +93,16 @@
         </div>
         <div class="col-2">
           <div class="container">
-            <p class="price">$99.90</p>
+            <p><span style="font-size: 40px; font-weight: 100;">$</span><span class="price">99.90</span></p>
             <button class="wishlist-btn btn btn-outline-info" type="button" name="button">Wishlist</button>
             <br>
             <br>
-            <button class="btn btn-info" type="button" name="button">Remove</button>
+            <button class="btn btn-info remove" type="button" name="button">Remove</button>
           </div>
         </div>
       </div>
-      <hr>
-      <div class="row">
+      <hr class="r-hr">
+      <div class="row delete">
         <div class="col-2">
           <a href="#"><img class="book" src="https://images-eu.ssl-images-amazon.com/images/I/512+dA1m+EL._AC_SX368_.jpg" alt=""></a>
         </div>
@@ -117,28 +113,42 @@
         </div>
         <div class="col-2">
           <div class="container">
-            <p class="price">$49.90</p>
+            <p><span style="font-size: 40px; font-weight: 100;">$</span><span class="price">49.90</span></p>
             <button class="wishlist-btn btn btn-outline-info" type="button" name="button">Wishlist</button>
             <br>
             <br>
-            <button class="btn btn-info" type="button" name="button">Remove</button>
+            <button class="btn btn-info remove" type="button" name="button">Remove</button>
           </div>
         </div>
       </div>
-      <hr>
-      <div class="row">
-        <div class="col-9">
-
+      <hr class="r-hr">
+      <div class="row delete">
+        <div class="col-2">
+          <a href="#"><img class="book" src="https://images-eu.ssl-images-amazon.com/images/I/51oBkcJvDRL._AC_SX368_.jpg" alt=""></a>
         </div>
-        <div class="col-3">
-          <!-- <h6>Total - $...</h6>
-          <h6>Free Shipping - $0.00</h6>
-          <h6>Tax - $...</h6> -->
-
-          <table>
+        <div class="col-8">
+          <h1>The Hitman</h1>
+          <h5>G.Krishnan</h5>
+          <h5>Bloomsbert</h5>
+        </div>
+        <div class="col-2">
+          <div class="container">
+            <p><span style="font-size: 40px; font-weight: 100;">$</span><span class="price">29.99</span></p>
+            <button class="wishlist-btn btn btn-outline-info" type="button" name="button">Wishlist</button>
+            <br>
+            <br>
+            <button class="btn btn-info remove" type="button" name="button">Remove</button>
+          </div>
+        </div>
+      </div>
+      <hr class="r-hr">
+      <div class="row">
+        <div class="col-8"></div>
+        <div class="col-4">
+          <table style="font-size: 30px; font-weight: 100;">
             <tr>
               <td style="text-align: right;">Total - </td>
-              <td>$...</td>
+              <td class="total">$0.00</td>
             </tr>
             <tr>
               <td style="text-align: right;">Free Shipping - </td>
@@ -146,9 +156,21 @@
             </tr>
             <tr>
               <td style="text-align: right;">Tax - </td>
-              <td>$...</td>
+              <td class="tax">$0.00</td>
             </tr>
           </table>
+          <hr>
+          <table style="font-size: 30px; font-weight: 100;">
+            <tr>
+              <td style="text-align: right;">Total Amount - </td>
+              <td class="amount">$0.00</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col"  style="text-align: center;">
+          <a class="btn btn-info"  href="../Shipping/index.html" type="button" name="button">Checkout</a>
         </div>
       </div>
     </div>

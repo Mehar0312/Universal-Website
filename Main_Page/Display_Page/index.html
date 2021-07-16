@@ -45,13 +45,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent-1">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown-link">
-              <!-- <button class="droplink" type="button" name="button"> -->
-              <a class="nav-link" href="#"><i class="fa fa-book"></i> Books</a>
-              <!-- </button> -->
+              <button class="droplink" type="button" name="button">
+                <a class="nav-link" href="#"><i class="fa fa-book"></i> Books</a>
+              </button>
               <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+                <a class="book-links" href="#"><i class="fas fa-angle-right"></i> CBSE</a>
+                <a class="book-links" href="#"><i class="fas fa-angle-right"></i> JEE</a>
+                <a class="book-links" href="#"><i class="fas fa-angle-right"></i> NEET</a>
               </div>
             </li>
             <li class="nav-item">
@@ -63,7 +63,7 @@
           </ul>
         </div>
         <a class="nav-link" href="#signup" data-toggle="modal" data-target=".log-sign"><i class="fas fa-user-circle fa-2x user-icon"></i> </a>
-        <a href="#"><i class="fas fa-shopping-cart fa-2x cart-icon"></i></a>
+        <a href="../Cart_Page/index.html"><i class="fas fa-shopping-cart fa-2x cart-icon"></i><sub class="cart-count"><span class="anchor-no">1</span></sub></a>
       </nav>
     </div>
   </section>
@@ -81,14 +81,59 @@
               <div class="col">
                 <button class="accordion">Board</button>
                 <div class="panel">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat.</p>
+                  <div class="row">
+                    <div class="col">
+                      <input type="checkbox" name="board"> <p>CBSE</p><br>
+                    </div>
+                    <div class="col">
+                      <input type="checkbox" name="board"> <p>JKB</p><br>
+                    </div>
+                    <div class="col">
+                      <input type="checkbox" name="board"> <p>ICSE</p><br>
+                    </div>
+                  </div>
                 </div>
 
                 <button class="accordion">Class</button>
                 <div class="panel">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat.</p>
+                  <div class="row">
+                    <div class="col">
+                      <input type="checkbox" name="class"> <p>1<sup>st</sup> Class</p><br>
+                    </div>
+                    <div class="col">
+                      <input type="checkbox" name="class"> <p>2<sup>nd</sup> Class</p><br>
+                    </div>
+                    <div class="col">
+                      <input type="checkbox" name="class"> <p>3<sup>rd</sup> Class</p><br>
+                    </div>
+                    <div class="col">
+                      <input type="checkbox" name="class"> <p>4<sup>th</sup> Class</p><br>
+                    </div>
+                    <div class="col">
+                      <input type="checkbox" name="class"> <p>5<sup>th</sup> Class</p><br>
+                    </div>
+                    <div class="col">
+                      <input type="checkbox" name="class"> <p>6<sup>th</sup> Class</p><br>
+                    </div>
+                    <div class="col">
+                      <input type="checkbox" name="class"> <p>7<sup>th</sup> Class</p><br>
+                    </div>
+                    <div class="col">
+                      <input type="checkbox" name="class"> <p>8<sup>th</sup> Class</p><br>
+                    </div>
+                    <div class="col">
+                      <input type="checkbox" name="class"> <p>9<sup>th</sup> Class</p><br>
+                    </div>
+                    <div class="col">
+                      <input type="checkbox" name="class"> <p>10<sup>th</sup> Class</p><br>
+                    </div>
+                    <div class="col">
+                      <input type="checkbox" name="class"> <p>11<sup>th</sup> Class</p><br>
+                    </div>
+                    <div class="col">
+                      <input type="checkbox" name="class"> <p>12<sup>th</sup> Class</p><br>
+                    </div>
+                  </div>
                 </div>
 
                 <button class="accordion">Author</button>
@@ -109,195 +154,189 @@
         <!-- Books Display Section -->
         <div class="display col-lg-10 col-md-10 col-sm-10">
           <div class="container no-gutters">
-            <div class="book-row odd-row row">
-              <div class="book-img col-lg-3 col-md-4 col-sm-4">
-                <a href="../Item_Page/index.html"><img class="book" src="https://images-eu.ssl-images-amazon.com/images/I/41gVhoPaE5L._AC_SX184_.jpg" alt=""></a>
-              </div>
-              <div class="book-details col-lg-6 col-md-4 col-sm-4">
-                <div class="container-fluid">
-                  <a href="../Item_Page/index.html" class="book-title">
-                    <h1>Think Like a Monk</h1>
-                  </a>
-                  <h5>Jay Shetty</h5>
-                  <h5>Jamtara Publications</h5>
-                  <p>
-                    <i class="fas fa-star checked"></i>
-                    <i class="fas fa-star checked"></i>
-                    <i class="fas fa-star checked"></i>
-                    <i class="fas fa-star checked"></i>
-                  </p>
+            <section id="display-books">
+              <div class="book-row odd-row row">
+                <div class="book-img col-lg-3 col-md-4 col-sm-4">
+                  <a href="../Item_Page/index.html"><img class="book" src="https://images-eu.ssl-images-amazon.com/images/I/41gVhoPaE5L._AC_SX184_.jpg" alt=""></a>
+                </div>
+                <div class="book-details col-lg-6 col-md-4 col-sm-4">
+                  <div class="container-fluid">
+                    <a href="../Item_Page/index.html" class="book-title">
+                      <h1>Think Like a Monk</h1>
+                    </a>
+                    <h5>Jay Shetty</h5>
+                    <h5>Jamtara Publications</h5>
+                    <p>
+                      <i class="fas fa-star checked"></i>
+                      <i class="fas fa-star checked"></i>
+                      <i class="fas fa-star checked"></i>
+                      <i class="fas fa-star checked"></i>
+                    </p>
+                  </div>
+                </div>
+                <div class="book-price col-lg-3 col-md-4 col-sm-4">
+                  <div class="container">
+                    <p class="price">$99.90</p>
+                  </div>
+                  <div class="container">
+                    <button class="add-to-cart-btn btn btn-outline-info" type="button" name="button">Add To Cart</button>
+                  </div>
                 </div>
               </div>
-              <div class="book-price col-lg-3 col-md-4 col-sm-4">
-                <div class="container">
-                  <p class="price">$99.90</p>
+              <div class="book-row even-row row">
+                <div class="book-img col-lg-3 col-md-4 col-sm-4">
+                  <a href="#"><img class="book" src="https://images-eu.ssl-images-amazon.com/images/I/512+dA1m+EL._AC_SX368_.jpg" alt=""></a>
                 </div>
-                <div class="container">
-                  <button class="add-to-cart-btn btn  btn-outline-info" type="button" name="button">Add To Cart</button>
+                <div class="book-details col-lg-6 col-md-4 col-sm-4">
+                  <div class="container-fluid">
+                    <a href="#" class="book-title">
+                      <h1>Hidden in the Plain Sight</h1>
+                    </a>
+                    <h5>Jeffrey Archer</h5>
+                    <h5>William Warwicks Publications</h5>
+                    <p>
+                      <i class="fas fa-star checked"></i>
+                      <i class="fas fa-star checked"></i>
+                      <i class="fas fa-star checked"></i>
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </div>
-
-            <div class="book-row even-row row">
-              <div class="book-img col-lg-3 col-md-4 col-sm-4">
-                <a href="#"><img class="book" src="https://images-eu.ssl-images-amazon.com/images/I/512+dA1m+EL._AC_SX368_.jpg" alt=""></a>
-              </div>
-              <div class="book-details col-lg-6 col-md-4 col-sm-4">
-                <div class="container-fluid">
-                  <a href="#" class="book-title">
-                    <h1>Hidden in the Plain Sight</h1>
-                  </a>
-                  <h5>Jeffrey Archer</h5>
-                  <h5>William Warwicks Publications</h5>
-                  <p>
-                    <i class="fas fa-star checked"></i>
-                    <i class="fas fa-star checked"></i>
-                    <i class="fas fa-star checked"></i>
-                  </p>
-                </div>
-              </div>
-              <div class="book-price col-lg-3 col-md-4 col-sm-4">
-                <div class="container">
-                  <p class="price">$49.90</p>
-                </div>
-                <div class="container">
-                  <button class="add-to-cart-btn btn  btn-outline-info" type="button" name="button">Add To Cart</button>
+                <div class="book-price col-lg-3 col-md-4 col-sm-4">
+                  <div class="container">
+                    <p class="price">$49.90</p>
+                  </div>
+                  <div class="container">
+                    <button class="add-to-cart-btn btn  btn-outline-info" type="button" name="button">Add To Cart</button>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div class="book-row odd-row row">
-              <div class="book-img col-lg-3 col-md-4 col-sm-4">
-                <a href="#"><img class="book" src="https://images-eu.ssl-images-amazon.com/images/I/51oBkcJvDRL._AC_SX368_.jpg" alt=""></a>
-              </div>
-              <div class="book-details col-lg-6 col-md-4 col-sm-4">
-                <div class="container-fluid">
-                  <a href="#" class="book-title">
-                    <h1>The Hitman</h1>
-                  </a>
-                  <h5>G.Krishnan</h5>
-                  <h5>Bloomsbert</h5>
-                  <p>
-                    <i class="fas fa-star checked"></i>
-                    <i class="fas fa-star checked"></i>
-                    <i class="fas fa-star checked"></i>
-                    <i class="fas fa-star checked"></i>
-                    <i class="fas fa-star-half checked"></i>
-                  </p>
+              <div class="book-row odd-row row">
+                <div class="book-img col-lg-3 col-md-4 col-sm-4">
+                  <a href="#"><img class="book" src="https://images-eu.ssl-images-amazon.com/images/I/51oBkcJvDRL._AC_SX368_.jpg" alt=""></a>
+                </div>
+                <div class="book-details col-lg-6 col-md-4 col-sm-4">
+                  <div class="container-fluid">
+                    <a href="#" class="book-title">
+                      <h1>The Hitman</h1>
+                    </a>
+                    <h5>G.Krishnan</h5>
+                    <h5>Bloomsbert</h5>
+                    <p>
+                      <i class="fas fa-star checked"></i>
+                      <i class="fas fa-star checked"></i>
+                      <i class="fas fa-star checked"></i>
+                      <i class="fas fa-star checked"></i>
+                      <i class="fas fa-star-half checked"></i>
+                    </p>
+                  </div>
+                </div>
+                <div class="book-price col-lg-3 col-md-4 col-sm-4">
+                  <div class="container">
+                    <p class="price">$29.99</p>
+                  </div>
+                  <div class="container">
+                    <button class="add-to-cart-btn btn  btn-outline-info" type="button" name="button">Add To Cart</button>
+                  </div>
                 </div>
               </div>
-              <div class="book-price col-lg-3 col-md-4 col-sm-4">
-                <div class="container">
-                  <p class="price">$29.99</p>
+              <div class="book-row even-row row">
+                <div class="book-img col-lg-3 col-md-4 col-sm-4">
+                  <a href="#"><img class="book" src="https://images-eu.ssl-images-amazon.com/images/I/41a+W3AFhyL._AC_SX368_.jpg" alt=""></a>
                 </div>
-                <div class="container">
-                  <button class="add-to-cart-btn btn  btn-outline-info" type="button" name="button">Add To Cart</button>
+                <div class="book-details col-lg-6 col-md-4 col-sm-4">
+                  <div class="container-fluid">
+                    <a href="#" class="book-title">
+                      <h1>Potrait's Power</h1>
+                    </a>
+                    <h5>N.K.Singh</h5>
+                    <h5>Dhanpatrai Publications</h5>
+                    <p>
+                      <i class="fas fa-star checked"></i>
+                      <i class="fas fa-star checked"></i>
+                      <i class="fas fa-star checked"></i>
+                      <i class="fas fa-star-half checked"></i>
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </div>
-
-            <div class="book-row even-row row">
-              <div class="book-img col-lg-3 col-md-4 col-sm-4">
-                <a href="#"><img class="book" src="https://images-eu.ssl-images-amazon.com/images/I/41a+W3AFhyL._AC_SX368_.jpg" alt=""></a>
-              </div>
-              <div class="book-details col-lg-6 col-md-4 col-sm-4">
-                <div class="container-fluid">
-                  <a href="#" class="book-title">
-                    <h1>Potrait's Power</h1>
-                  </a>
-                  <h5>N.K.Singh</h5>
-                  <h5>Dhanpatrai Publications</h5>
-                  <p>
-                    <i class="fas fa-star checked"></i>
-                    <i class="fas fa-star checked"></i>
-                    <i class="fas fa-star checked"></i>
-                    <i class="fas fa-star-half checked"></i>
-                  </p>
-                </div>
-              </div>
-              <div class="book-price col-lg-3 col-md-4 col-sm-4">
-                <div class="container">
-                  <p class="price">$134.90</p>
-                </div>
-                <div class="container">
-                  <button class="add-to-cart-btn btn  btn-outline-info" type="button" name="button">Add To Cart</button>
+                <div class="book-price col-lg-3 col-md-4 col-sm-4">
+                  <div class="container">
+                    <p class="price">$134.90</p>
+                  </div>
+                  <div class="container">
+                    <button class="add-to-cart-btn btn  btn-outline-info" type="button" name="button">Add To Cart</button>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div class="book-row odd-row row">
-              <div class="book-img col-lg-3 col-md-4 col-sm-4">
-                <a href="#"><img class="book" src="https://images-na.ssl-images-amazon.com/images/I/51JmQMq464L._SX352_BO1,204,203,200_.jpg" alt=""></a>
-              </div>
-              <div class="book-details col-lg-6 col-md-4 col-sm-4">
-                <div class="container-fluid">
-                  <a href="#" class="book-title">
-                    <h1>National Curriculum English Textbook</h1>
-                  </a>
-                  <h5>Schastic</h5>
-                  <h5>Key Stage 1</h5>
-                  <p>
-                    <i class="fas fa-star checked"></i>
-                    <i class="fas fa-star checked"></i>
-                    <i class="fas fa-star checked"></i>
-                    <i class="fas fa-star checked"></i>
-                  </p>
+              <div class="book-row odd-row row">
+                <div class="book-img col-lg-3 col-md-4 col-sm-4">
+                  <a href="#"><img class="book" src="https://images-na.ssl-images-amazon.com/images/I/51JmQMq464L._SX352_BO1,204,203,200_.jpg" alt=""></a>
+                </div>
+                <div class="book-details col-lg-6 col-md-4 col-sm-4">
+                  <div class="container-fluid">
+                    <a href="#" class="book-title">
+                      <h1>National Curriculum English Textbook</h1>
+                    </a>
+                    <h5>Schastic</h5>
+                    <h5>Key Stage 1</h5>
+                    <p>
+                      <i class="fas fa-star checked"></i>
+                      <i class="fas fa-star checked"></i>
+                      <i class="fas fa-star checked"></i>
+                      <i class="fas fa-star checked"></i>
+                    </p>
+                  </div>
+                </div>
+                <div class="book-price col-lg-3 col-md-4 col-sm-4">
+                  <div class="container">
+                    <p class="price">$19.99</p>
+                  </div>
+                  <div class="container">
+                    <button class="add-to-cart-btn btn  btn-outline-info" type="button" name="button">Add To Cart</button>
+                  </div>
                 </div>
               </div>
-              <div class="book-price col-lg-3 col-md-4 col-sm-4">
-                <div class="container">
-                  <p class="price">$19.99</p>
+              <div class="book-row even-row row">
+                <div class="book-img col-lg-3 col-md-4 col-sm-4">
+                  <a href="#"><img class="book" src="https://www.appi.org/ProductImages/37150.jpg" alt=""></a>
                 </div>
-                <div class="container">
-                  <button class="add-to-cart-btn btn  btn-outline-info" type="button" name="button">Add To Cart</button>
+                <div class="book-details col-lg-6 col-md-4 col-sm-4">
+                  <div class="container-fluid">
+                    <a href="#" class="book-title">
+                      <h1>Textbook of Psychiatry</h1>
+                    </a>
+                    <h5>Laura Weiss Roberts</h5>
+                    <h5>The American Psychiatric Association</h5>
+                    <p>
+                      <i class="fas fa-star checked"></i>
+                      <i class="fas fa-star checked"></i>
+                      <i class="fas fa-star checked"></i>
+                      <i class="fas fa-star checked"></i>
+                      <i class="fas fa-star checked"></i>
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </div>
-
-            <div class="book-row even-row row">
-              <div class="book-img col-lg-3 col-md-4 col-sm-4">
-                <a href="#"><img class="book" src="https://www.appi.org/ProductImages/37150.jpg" alt=""></a>
-              </div>
-              <div class="book-details col-lg-6 col-md-4 col-sm-4">
-                <div class="container-fluid">
-                  <a href="#" class="book-title">
-                    <h1>Textbook of Psychiatry</h1>
-                  </a>
-                  <h5>Laura Weiss Roberts</h5>
-                  <h5>The American Psychiatric Association</h5>
-                  <p>
-                    <i class="fas fa-star checked"></i>
-                    <i class="fas fa-star checked"></i>
-                    <i class="fas fa-star checked"></i>
-                    <i class="fas fa-star checked"></i>
-                    <i class="fas fa-star checked"></i>
-                  </p>
-                </div>
-              </div>
-              <div class="book-price col-lg-3 col-md-4 col-sm-4">
-                <div class="container">
-                  <p class="price">$99.99</p>
-                </div>
-                <div class="container">
-                  <button class="add-to-cart-btn btn  btn-outline-info" type="button" name="button">Add To Cart</button>
+                <div class="book-price col-lg-3 col-md-4 col-sm-4">
+                  <div class="container">
+                    <p class="price">$99.99</p>
+                  </div>
+                  <div class="container">
+                    <button class="add-to-cart-btn btn  btn-outline-info" type="button" name="button">Add To Cart</button>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div class="page-interval container">
-              <div class="btn-group me-2" role="group" aria-label="First group">
-                <!-- <button type="button" class="btn btn-info"><i class="fas fa-angle-left"></i></button> -->
-                <!-- <button type="button" class="btn btn-info">...</button> -->
-                <button type="button" class="btn btn-outline-info">1</button>
-                <button type="button" class="btn btn-outline-info">2</button>
-                <button type="button" class="btn btn-outline-info">3</button>
-                <button type="button" class="btn btn-outline-info">...</button>
-                <button type="button" class="btn btn-outline-info"><i class="fas fa-angle-right"></i></button>
-
+              <div class="page-interval container">
+                <div class="btn-group me-2" role="group" aria-label="First group">
+                  <!-- <button type="button" class="btn btn-info"><i class="fas fa-angle-left"></i></button> -->
+                  <!-- <button type="button" class="btn btn-info">...</button> -->
+                  <button type="button" class="btn btn-outline-info">1</button>
+                  <button type="button" class="btn btn-outline-info">2</button>
+                  <button type="button" class="btn btn-outline-info">3</button>
+                  <button type="button" class="btn btn-outline-info">...</button>
+                  <button type="button" class="btn btn-outline-info"><i class="fas fa-angle-right"></i></button>
+                </div>
               </div>
-            </div>
+            </section>
           </div>
-
         </div>
       </div>
     </div>

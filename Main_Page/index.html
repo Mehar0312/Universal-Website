@@ -5,6 +5,9 @@
   <meta charset="utf-8">
   <title>Main Page</title>
 
+  <!-- AngularJS Link -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> -->
+
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
 
@@ -28,7 +31,7 @@
 <body>
 
   <!-- Scrolldown Navigation Section -->
-  <section id="fixed">
+  <section id="fixed" ng-app="myApp">
     <nav class="navi-fixed navbar navbar-expand-lg navbar-light">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-1" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -44,8 +47,15 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent-1">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa fa-book"></i> Books</a>
+          <li class="nav-item dropdown-link">
+            <button class="droplink" type="button" name="button">
+              <a class="nav-link" href="#"><i class="fa fa-book"></i> Books</a>
+            </button>
+            <div class="dropdown-content">
+              <a class="book-links" href="#"><i class="fas fa-angle-right"></i> CBSE</a>
+              <a class="book-links" href="#"><i class="fas fa-angle-right"></i> JEE</a>
+              <a class="book-links" href="#"><i class="fas fa-angle-right"></i> NEET</a>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="fas fa-cloud"></i> About Us</a>
@@ -53,22 +63,10 @@
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="fas fa-phone"></i> Contact</a>
           </li>
-          <li class="nav-item">
-            <div class="dropdown">
-              <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown button
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </div>
-          </li>
         </ul>
       </div>
-      <a class="nav-link" href="#signup" data-toggle="modal" data-target=".log-sign"><i class="fas fa-user-circle fa-2x user-icon"></i> </a>
-      <a href="#"><i class="fas fa-shopping-cart fa-2x cart-icon"></i></a>
+      <a id="user" class="nav-link" href="#signup" data-toggle="modal" data-target=".log-sign"><i class="fas fa-user-circle fa-2x user-icon"></i> </a>
+      <a href="Cart_Page/index.html"><i class="fas fa-shopping-cart fa-2x cart-icon"></i><sub class="cart-count"><span class="anchor-no">0</span></sub></a>
 
     </nav>
   </section>
@@ -86,7 +84,7 @@
         <img class="uni-pic" src="Images/Universal.jpeg" alt="Universal Books">
       </div>
       <div class="col-4 cart">
-        <a href="#"><i class="fas fa-shopping-cart fa-2x cart-icon"></i></a>
+        <a href="Cart_Page/index.html"><i class="fas fa-shopping-cart fa-2x cart-icon"></i><sub class="cart-count"><span class="anchor-no">0</span></sub></a>
       </div>
     </div>
   </section>
@@ -102,11 +100,15 @@
       </a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent-2">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#registration">
-              <i class="fa fa-book"></i>
-              Books
-            </a>
+          <li class="nav-item dropdown-link">
+            <button class="droplink" type="button" name="button">
+              <a class="nav-link" href="#"><i class="fa fa-book"></i> Books</a>
+            </button>
+            <div class="dropdown-content">
+              <a class="book-links" href="#"><i class="fas fa-angle-right"></i> CBSE</a>
+              <a class="book-links" href="#"><i class="fas fa-angle-right"></i> JEE</a>
+              <a class="book-links" href="#"><i class="fas fa-angle-right"></i> NEET</a>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#gallery"><i class="fas fa-cloud"></i> About Us</a>
@@ -128,14 +130,6 @@
           <img src="Images/Image6.jpg" class="book-image" alt="Image6">
         </div>
       </div>
-      <!-- <a class="carousel-control-prev" href="#section-carousel" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#section-carousel" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a> -->
     </div>
   </section>
 
@@ -143,8 +137,17 @@
   <section id="carousel-book">
     <div class="container book-container">
       <div class="title-shop">
-        <h1 class="display-4 section-heading">Universal Book Sellar</h1>
+        <h1 class="display-4 section-heading">Universal Book Seller</h1>
       </div>
+    </div>
+    <div id="display-name" class="greetings row">
+
+    </div>
+    <div class="category-title">
+      <h3>Bestsellers</h3>
+    </div>
+    <div class="view-link">
+      <a href="Display_Page/index.html">View All</a>
     </div>
     <div id="section-carousel-1" class="carousel slide" data-ride="false" data-touch=true data-interval=false>
       <div class="container-fluid no-gutters">
@@ -207,6 +210,9 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <!-- <span class="sr-only">Next</span> -->
       </a>
+    </div>
+    <div class="view-link">
+      <a href="#">View All</a>
     </div>
     <div id="section-carousel-2" class="carousel slide" data-ride="false" data-touch=true data-interval=false>
       <div class="container-fluid no-gutters">
@@ -287,7 +293,7 @@
       </div>
       <div class="card-description">
         <h3>NCERT</h3>
-        <p>widhudvhbnsjsiojdjjdjhduighquhsksxnhsjsxnuxgqwpssnwjhbwugdwdi.</p>
+        <!-- <p>widhudvhbnsjsiojdjjdjhduighquhsksxnhsjsxnuxgqwpssnwjhbwugdwdi.</p> -->
         <a target="_blank" href="#" class="btn btn-info">View Category</a>
       </div>
     </div>
@@ -297,7 +303,7 @@
       </div>
       <div class="card-description">
         <h3>JEE</h3>
-        <p>idhudvhbnsjsiojdjjdjhduighquhsksxnhsjsxnuxgqwpssnwjhbwugdwdi.</p>
+        <!-- <p>idhudvhbnsjsiojdjjdjhduighquhsksxnhsjsxnuxgqwpssnwjhbwugdwdi.</p> -->
         <a target="_blank" href="#" class="btn btn-info">View Category</a>
       </div>
     </div>
@@ -364,46 +370,6 @@
   <hr>
 
   <!-- Footer Section -->
-  <!-- <footer id="footer">
-    <div class="container-fluid">
-      <div class="row no-gutters link-row">
-        <div class="col-lg-2 col-md-2">
-          <h5 class="footer-heading">Board</h5>
-          <ul class="no-gutters">
-            <li><a href="#">CBSE</a></li>
-            <li><a href="#">JK-BOARD</a></li>
-            <li><a href="#">DAV</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-2 col-md-2">
-          <h5 class="footer-heading">Subjects</h5>
-          <ul>
-            <li><a href="#">PHYSICS</a></li>
-            <li><a href="#">CHEMISTRY</a></li>
-            <li><a href="#">MATHS</a></li>
-            <li><a href="#">BIOLOGY</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-2 col-md-2">
-          <h5 class="footer-heading">Class</h5>
-          <ul>
-            <li><a href="#">Class 1-5</a></li>
-            <li><a href="#">Class 6-8</a></li>
-            <li><a href="#">Class 9-10</a></li>
-            <li><a href="#">Class 11-12</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-2 col-md-2">
-          <h5 class="footer-heading">Entrance</h5>
-        </div>
-         <div class="col-lg-2 col-md-2">
-          <h5 class="footer-heading"></h5>
-        </div>
-      </div>
-    </div>
-  </footer> -->
-
-  <!-- Footer Section -->
   <footer id="footer">
     <div id="left-footer">
       <h3>Quick Links</h3>
@@ -453,7 +419,7 @@
           </li>
         </ul>
       </div>
-      <p>###.</p>
+      <p>Created By: Best and Co.</p>
     </div>
   </footer>
 
@@ -465,35 +431,33 @@
         <div class="bs-example bs-example-tabs">
           <ul id="myTab" class="nav nav-tabs">
             <li id="tab1" class=" active tab-style login-shadow "><a href="#signin" data-toggle="tab">Log In</a></li>
-            <li id="tab2" class=" tab-style "><a href="#signup" data-toggle="tab">Sign Up</a></li>
+            <li id="tab2" class=" tab-style signup-shadow"><a href="#signup" data-toggle="tab">Sign Up</a></li>
           </ul>
         </div>
         <div class="modal-body">
           <div id="myTabContent" class="tab-content">
             <div class="tab-pane fade active in" id="signin">
               <form class="form-horizontal">
-                <fieldset>
+                <!-- <fieldset> -->
                   <!-- Sign In Form -->
-                  <!-- Text input-->
                   <div class="group">
-                    <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
-                    <label class="label" for="date">Email address</label></div>
-                  <!-- Password input-->
-                  <div class="group">
-                    <input required="" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
-                    <label class="label" for="date">Password</label>
+                    <label class="label" for="date">Email address</label>
+                    <input required="" class="input inputs1" type="text"><span class="highlight" value="Email"></span><span class="bar"></span>
                   </div>
-                  <em>minimum 6 characters</em>
+                  <div class="group">
+                    <label class="label" for="date">Password</label>
+                    <input required="" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
+                  </div>
+                  <!-- <em>minimum 6 characters</em> -->
 
                   <div class="forgot-link">
                     <a href="#forgot" data-toggle="modal" data-target="#forgot-password"> I forgot my password</a>
                   </div>
 
-                  <!-- Button -->
                   <div class="control-group">
                     <label class="control-label" for="signin"></label>
                     <div class="controls">
-                      <button id="signin" name="signin" class="btn btn-primary btn-block">Log In</button>
+                      <button id="signin" name="signin" class="btn btn-info btn-block submit">Log In</button>
                     </div>
                   </div>
                 </fieldset>
@@ -504,33 +468,29 @@
               <form class="form-horizontal">
                 <fieldset>
                   <!-- Sign Up Form -->
-                  <!-- Text input-->
                   <div class="group">
-                    <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
                     <label class="label" for="date">First Name</label></div>
-                  <!-- Text input-->
+                    <input required="" class="input inputs2" type="text"><span class="highlight"></span><span class="bar"></span>
                   <div class="group">
-                    <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
                     <label class="label" for="date">Last Name</label></div>
-                  <!-- Password input-->
-                  <div class="group">
                     <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                  <div class="group">
                     <label class="label" for="date">Email</label></div>
-                  <!-- Text input-->
-                  <div class="group">
-                    <input required="" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
-                    <label class="label" for="date">Password</label></div>
-                  <em>1-8 Characters</em>
-
-                  <div class="group2">
                     <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
-                    <label class="label" for="date">Country</label></div>
+                  <div class="group">
+                    <label class="label" for="date">Password</label>
+                    <input required="" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
+                  </div>
+                  <div class="group">
+                    <label class="label" for="date">Confirm Password</label>
+                    <input required="" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
+                  </div>
+                  <!-- <em>1-8 Characters</em> -->
 
-                  <!-- Button -->
                   <div class="control-group">
                     <label class="control-label" for="confirmsignup"></label>
                     <div class="controls">
-                      <button id="confirmsignup" name="confirmsignup" class="btn btn-primary btn-block">Sign Up</button>
+                      <button id="confirmsignup" name="confirmsignup" class="btn btn-info btn-block submit">Sign Up</button>
                     </div>
                   </div>
                 </fieldset>
@@ -550,7 +510,6 @@
 
 
   <!--modal2-->
-
   <div class="modal fade bs-modal-sm" id="forgot-password" tabindex="0" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
@@ -563,8 +522,8 @@
             <fieldset>
               <div class="group">
                 <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
-                <label class="label" for="date">Email address</label></div>
-
+                <label class="label" for="date">Email address</label>
+              </div>
 
               <div class="control-group">
                 <label class="control-label" for="forpassword"></label>
@@ -574,12 +533,10 @@
               </div>
             </fieldset>
           </form>
-
         </div>
       </div>
-
     </div>
-
+  </div>
 </body>
 
 </html>

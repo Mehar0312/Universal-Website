@@ -14,6 +14,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
     <!-- JavaScript Source -->
+    <!-- <script src="../main.js" charset="utf-8" defer></script> -->
     <script src="index.js" charset="utf-8" defer></script>
 
     <!-- Bootstrap Javascript -->
@@ -40,8 +41,15 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent-1">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-book"></i> Books</a>
+              <li class="nav-item dropdown-link">
+                <button class="droplink" type="button" name="button">
+                  <a class="nav-link" href="#"><i class="fa fa-book"></i> Books</a>
+                </button>
+                <div class="dropdown-content">
+                  <a class="book-links" href="#"><i class="fas fa-angle-right"></i> CBSE</a>
+                  <a class="book-links" href="#"><i class="fas fa-angle-right"></i> JEE</a>
+                  <a class="book-links" href="#"><i class="fas fa-angle-right"></i> NEET</a>
+                </div>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#"><i class="fas fa-cloud"></i> About Us</a>
@@ -49,22 +57,10 @@
               <li class="nav-item">
                 <a class="nav-link" href="#"><i class="fas fa-phone"></i> Contact</a>
               </li>
-              <!-- <li class="nav-item">
-                <div class="dropdown">
-                  <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown button
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
-                </div>
-              </li> -->
             </ul>
           </div>
           <a class="nav-link" href="#signup" data-toggle="modal" data-target=".log-sign"><i class="fas fa-user-circle fa-2x user-icon"></i> </a>
-          <a href="#"><i class="fas fa-shopping-cart fa-2x cart-icon"></i></a>
+          <a href="../Cart_Page/index.html"><i class="fas fa-shopping-cart fa-2x cart-icon"></i><sub class="cart-count"><span class="anchor-no">0</span></sub></a>
         </div>
       </nav>
     </section>
@@ -80,9 +76,9 @@
           </div>
           <div class="book-details col-lg-9 col-md-9 col-sm-6">
             <div class="container">
-              <h1>Think Like a Monk</h1>
-              <h5>Jay Shetty</h5>
-              <h5>Jamtara Publications</h5>
+              <h1 class="title">Think Like a Monk</h1>
+              <h5 class="author">Jay Shetty</h5>
+              <h5 class="publications">Jamtara Publications</h5>
               <p>
                 <i class="fas fa-star checked"></i>
                 <i class="fas fa-star checked"></i>
@@ -96,24 +92,30 @@
             </div>
             <div class="container">
               <button class="buy-now-btn btn btn-info" type="button" name="button">Buy Now</button>
-              <button class="add-to-cart-btn btn  btn-outline-info" type="button" name="button">Add To Cart</button>
+              <button class="add-to-cart-btn btn btn-outline-info" type="button" name="button">Add To Cart</button>
             </div>
             <div class="container">
 
               <form class="form-inline">
-                <input class="form-control" type="text" name="pin-code" value="" maxlength="6">
-                <button class="btn btn-outline-info" type="button" name="button">Check</button>
+                <input class="form-control pin" type="text" name="pin-code" value="" maxlength="6">
+                <button class="btn btn-outline-info check-btn" type="button" name="button">Check</button>
+                <p class="show-msg">.</p>
               </form>
               <p>Check Delivery Status</p>
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row" style="padding-bottom: 2%;">
           <div class="col-lg-3 col-md-3 col-sm-6">
-            <h3>Product Details-</h3>
-            <p>Name: Think Like a Monk</p>
-            <p>Author: Jay Shetty</p>
-            <span class="drop-details btn btn-outline-info">Read More <i class="fas fa-chevron-down"></i></span>
+            <div class="drop-details accordion">Poduct Details</div>
+            <div class="panel">
+              <p>Name: Think Like a Monk</p>
+              <p>Author: Jay Shetty</p>
+              <p>Publications: Jamtara Publications</p>
+              <p>Pages: 280</p>
+              <p>Dimensions: 20x15 cm</p>
+              <p>Country of Origin: India</p>
+            </div>
           </div>
         </div>
       </div>
@@ -128,7 +130,7 @@
             <h3>Bestsellers</h3>
           </div>
           <div class="view-more col-6">
-            <h6><a href="#">View More</a></h6>
+            <h6><a href="../Display_Page/index.html">View More</a></h6>
           </div>
         </div>
         <div id="section-carousel-1" class="carousel slide" data-ride="false" data-touch=true data-interval=false>
@@ -270,12 +272,5 @@
         <p>###.</p>
       </div>
     </footer>
-
-    <!-- <div class="new1">
-
-    </div>
-    <div class="new2">
-
-    </div> -->
   </body>
 </html>

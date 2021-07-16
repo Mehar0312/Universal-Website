@@ -1,4 +1,4 @@
-// When the user scrolls down 20px from the top of the document, slide down the navbar
+// When the user scrolls down 7px from the top of the document, slide down the navbar
 // When the user scrolls to the top of the page, slide up the navbar (50px out of the top view
 window.onscroll = function() {scrollFunction()};
 
@@ -10,35 +10,8 @@ function scrollFunction() {
   }
 }
 
-const searchBtn = document.querySelector('#universal .search-btn');
-if (screen.width < '900px') {
-  searchBtn.innerHTML = '<button class="btn btn-outline-success btn-outline-dark my-2 my-sm-0 search-btn" type="submit"><i class="fas fa-search"></i></button>'
-}
-
-// $('#recipeCarousel').carousel({
-//   interval: 10000
-// })
-// $('.carousel .carousel-item').each(function(){
-//     var minPerSlide = 3;
-//     var next = $(this).next();
-//     if (!next.length) {
-//     next = $(this).siblings(':first');
-//     }
-//     next.children(':first-child').clone().appendTo($(this));
-//
-//     for (var i=0;i<minPerSlide;i++) {
-//         next=next.next();
-//         if (!next.length) {
-//         	next = $(this).siblings(':first');
-//       	}
-//
-//         next.children(':first-child').clone().appendTo($(this));
-//       }
-// });
-
 //sign up
 $(window, document, undefined).ready(function() {
-
   $('.input').blur(function() {
     var $this = $(this);
     if ($this.val())
@@ -46,9 +19,7 @@ $(window, document, undefined).ready(function() {
     else
       $this.removeClass('used');
   });
-
-  });
-
+});
 
 $('#tab1').on('click' , function(){
     $('#tab1').addClass('login-shadow');
@@ -58,6 +29,32 @@ $('#tab1').on('click' , function(){
 $('#tab2').on('click' , function(){
     $('#tab2').addClass('signup-shadow');
    $('#tab1').removeClass('login-shadow');
+});
 
+const addModal = document.getElementById('myModal');
+const userInput1 = addModal.querySelector('.inputs1');
+const userInput2 = addModal.querySelector('.inputs2');
+const submitButton = addModal.querySelector('.submit');
+const names = [];
 
+const renderName = (name, firstName) => {
+  const showName = document.createElement('div');
+  showName.className = 'col';
+  showName.innerHTML = `
+    <p>Hello ${name || firstName}</p>
+  `;
+  const displayName = document.getElementById('display-name');
+  displayName.append(showName);
+};
+
+submitButton.addEventListener('click', function() {
+  console.log('ji');
+  const name = userInput1.value;
+  const firstName = userInput2.value;
+  const showName = {
+    name: name,
+    firstName: firstName
+  };
+  names.push(showName);
+  renderName(showName.name, showName.firstName);
 });
